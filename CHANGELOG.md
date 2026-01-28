@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.3](https://github.com/bunkercache/opencode-sentry/compare/v1.0.2...v1.0.3) (2026-01-28)
+
+
+### Bug Fixes
+
+* delete any existing npm auth token before OIDC publish ([32cd987](https://github.com/bunkercache/opencode-sentry/commit/32cd987fefe0509c5727e923009bb8589438f6d5))
+* delete existing npm auth token before OIDC publish ([#7](https://github.com/bunkercache/opencode-sentry/issues/7)) ([32cd987](https://github.com/bunkercache/opencode-sentry/commit/32cd987fefe0509c5727e923009bb8589438f6d5))
+
 ## [1.0.2](https://github.com/bunkercache/opencode-sentry/compare/v1.0.1...v1.0.2) (2026-01-28)
 
 
