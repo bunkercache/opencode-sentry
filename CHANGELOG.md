@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/bunkercache/opencode-sentry/compare/v1.0.4...v1.0.5) (2026-01-28)
+
+
+### Bug Fixes
+
+* remove prerelease publishing and normalize repository URL ([#11](https://github.com/bunkercache/opencode-sentry/issues/11)) ([d390eb8](https://github.com/bunkercache/opencode-sentry/commit/d390eb8502e5cb8ed176a65025a140c90b48979f))
+
 ## [1.0.4](https://github.com/bunkercache/opencode-sentry/compare/v1.0.3...v1.0.4) (2026-01-28)
 
 
