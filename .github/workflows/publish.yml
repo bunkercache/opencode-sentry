@@ -33,7 +33,9 @@ jobs:
           experimental: true
 
       - name: Configure npm for OIDC
-        run: npm config set registry https://registry.npmjs.org/
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm config delete //registry.npmjs.org/:_authToken 2>/dev/null || true
 
       - name: Setup
         run: mise run setup
