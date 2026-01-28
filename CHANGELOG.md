@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/bunkercache/opencode-sentry/compare/v1.0.3...v1.0.4) (2026-01-28)
+
+
+### Bug Fixes
+
+* add main and types fields to package.json ([#9](https://github.com/bunkercache/opencode-sentry/issues/9)) ([cc38b51](https://github.com/bunkercache/opencode-sentry/commit/cc38b515bcbe79eb917348c5885bc805cd82b10a))
+
 ## [1.0.3](https://github.com/bunkercache/opencode-sentry/compare/v1.0.2...v1.0.3) (2026-01-28)
 
 
