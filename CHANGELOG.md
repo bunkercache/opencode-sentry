@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.2](https://github.com/bunkercache/opencode-sentry/compare/v1.0.1...v1.0.2) (2026-01-28)
+
+
+### Bug Fixes
+
+* align publish workflow with opencode-memoir OIDC pattern ([#4](https://github.com/bunkercache/opencode-sentry/issues/4)) ([12155a4](https://github.com/bunkercache/opencode-sentry/commit/12155a4a6fdb4e858f3c7805e4e967f48b92ed4b))
+* align publish workflow with working opencode-memoir pattern ([12155a4](https://github.com/bunkercache/opencode-sentry/commit/12155a4a6fdb4e858f3c7805e4e967f48b92ed4b))
+
 ## [1.0.1](https://github.com/bunkercache/opencode-sentry/compare/v1.0.0...v1.0.1) (2026-01-28)
 
 

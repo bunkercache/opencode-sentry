@@ -1,6 +1,6 @@
 {
   "name": "@bunkercache/opencode-sentry",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sentry AI observability plugin for OpenCode - tracks agent sessions, model usage, tool calls, and costs",
   "author": {
     "name": "Destreyf",
