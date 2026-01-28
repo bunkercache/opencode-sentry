@@ -21,6 +21,9 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - id: inputs
+        uses: simenandre/setup-inputs@00a2f5d3135898b400343ff87d99b7841e6e4592 # v1.1.0
+
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
       - uses: jdx/mise-action@146a28175021df8ca24f8ee1828cc2a60f980bd5 # v3.5.1
@@ -29,28 +32,14 @@ jobs:
           cache: true
           experimental: true
 
+      - name: Configure npm for OIDC
+        run: npm config set registry https://registry.npmjs.org/
+
       - name: Setup
         run: mise run setup
 
       - name: Build
         run: mise run build
 
-      - id: inputs
-        uses: simenandre/setup-inputs@00a2f5d3135898b400343ff87d99b7841e6e4592 # v1.1.0
-
-      - name: Configure npm for OIDC
-        run: |
-          npm config set //registry.npmjs.org/:_authToken ""
-          npm config set registry https://registry.npmjs.org/
-
-      - name: Publish to npm with OIDC
-        env:
-          NPM_CONFIG_PROVENANCE: true
-        run: |
-          TAG="${{ steps.inputs.outputs.tag }}"
-          if [ -z "$TAG" ]; then
-            TAG="latest"
-          fi
-
-          echo "Publishing with tag: $TAG"
-          npm publish --access public --tag "$TAG" --provenance
+      - name: Publish
+        run: mise run publish --tag "${{ steps.inputs.outputs.tag || 'latest' }}"
