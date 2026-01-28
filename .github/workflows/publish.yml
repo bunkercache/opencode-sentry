@@ -21,9 +21,9 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
-      - uses: jdx/mise-action@d6e32c1796099e0f1f3ac741c220a8b7eae9e5dd
+      - uses: jdx/mise-action@146a28175021df8ca24f8ee1828cc2a60f980bd5 # v3.5.1
         with:
           install: true
           cache: true
@@ -33,7 +33,7 @@ jobs:
         run: mise run build
 
       - id: inputs
-        uses: simenandre/setup-inputs@v1
+        uses: simenandre/setup-inputs@00a2f5d3135898b400343ff87d99b7841e6e4592 # v1.1.0
 
       - name: Publish to npm with OIDC
         run: |

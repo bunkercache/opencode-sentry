@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 #MISE description="Build the project"
 #MISE sources=["src/**/*"]
-#MISE outputs=["dist/index.js"]
+#MISE outputs=["dist/index.js", "dist/index.d.ts"]
 
-bun build ./src/index.ts --outdir dist --target bun
+# Build JS with external dependencies
+bun build ./src/index.ts --outdir dist --target bun \
+  --external '@sentry/bun' \
+  --external '@opentelemetry/api' \
+  --external '@opencode-ai/plugin'
+
+# Generate type declarations
+bunx tsc

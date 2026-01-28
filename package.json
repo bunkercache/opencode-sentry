@@ -1,10 +1,10 @@
 {
-  "name": "{{moduleName}}",
+  "name": "@bunkercache/opencode-sentry",
   "version": "0.1.0",
-  "description": "{{description}}",
+  "description": "Sentry AI observability plugin for OpenCode - tracks agent sessions, model usage, tool calls, and costs",
   "author": {
-    "name": "{{authorName}}",
-    "email": "{{authorEmail}}"
+    "name": "Destreyf",
+    "email": "Destreyf@users.github.com"
   },
   "type": "module",
   "exports": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "{{repositoryUrl}}"
+    "url": "https://github.com/bunkercache/opencode-sentry"
   },
   "publishConfig": {
     "access": "public",
@@ -25,17 +25,35 @@
     "dist",
     "src/version.ts"
   ],
+  "keywords": [
+    "opencode",
+    "sentry",
+    "plugin",
+    "observability",
+    "ai",
+    "llm",
+    "agent",
+    "tracing",
+    "tokens",
+    "cost",
+    "tools"
+  ],
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.1.39",
+    "@opentelemetry/api": "^1.9.0",
+    "@sentry/bun": "^10.37.0"
+  },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@types/node": "^20.11.5",
-    "@typescript-eslint/eslint-plugin": "8.47.0",
-    "@typescript-eslint/parser": "8.47.0",
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^22.15.29",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
     "bun-types": "latest",
-    "eslint": "^9.39.1",
-    "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-prettier": "^5.1.3",
-    "prettier": "^3.2.4",
-    "typescript-eslint": "^8.47.0",
-    "vitest": "^3.2.4"
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "prettier": "^3.8.1",
+    "typescript-eslint": "^8.54.0",
+    "vitest": "^4.0.18"
   }
 }
