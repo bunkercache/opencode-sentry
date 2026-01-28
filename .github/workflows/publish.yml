@@ -38,7 +38,14 @@ jobs:
       - id: inputs
         uses: simenandre/setup-inputs@00a2f5d3135898b400343ff87d99b7841e6e4592 # v1.1.0
 
+      - name: Configure npm for OIDC
+        run: |
+          npm config set //registry.npmjs.org/:_authToken ""
+          npm config set registry https://registry.npmjs.org/
+
       - name: Publish to npm with OIDC
+        env:
+          NPM_CONFIG_PROVENANCE: true
         run: |
           TAG="${{ steps.inputs.outputs.tag }}"
           if [ -z "$TAG" ]; then
@@ -46,4 +53,4 @@ jobs:
           fi
 
           echo "Publishing with tag: $TAG"
-          mise run publish --tag "$TAG"
+          npm publish --access public --tag "$TAG" --provenance
