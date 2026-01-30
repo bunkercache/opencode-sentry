@@ -1,0 +1,69 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "helpers:pinGitHubActionDigests", ":semanticCommits"],
+  "timezone": "America/Los_Angeles",
+  "schedule": ["after 10pm every weekday", "before 5am every weekday", "every weekend"],
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2,
+  "rebaseWhen": "behind-base-branch",
+  "labels": ["dependencies"],
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "automerge": true
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["^@types/"],
+      "automerge": true,
+      "groupName": "type definitions"
+    },
+    {
+      "matchPackagePatterns": ["^eslint", "^@typescript-eslint", "prettier"],
+      "groupName": "linting and formatting"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions",
+      "automerge": true
+    },
+    {
+      "matchManagers": ["mise"],
+      "groupName": "mise tools"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true
+    },
+    {
+      "description": "Pin @opencode-ai packages to 1.1.44 max due to broken workspace deps in 1.1.45+",
+      "matchPackagePatterns": ["^@opencode-ai/"],
+      "allowedVersions": "<=1.1.44"
+    },
+    {
+      "description": "Pin anomalyco/opencode packages to 1.1.44 max",
+      "matchPackagePatterns": ["^@anomalyco/"],
+      "allowedVersions": "<=1.1.44"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^mise\\.toml$"],
+      "matchStrings": [
+        "(?<depName>bun|npm|pkl|semver|usage|hk)\\s*=\\s*\"(?<currentValue>[^\"]+)\""
+      ],
+      "datasourceTemplate": "github-releases",
+      "packageNameTemplate": "{{#if (equals depName 'bun')}}oven-sh/bun{{else if (equals depName 'npm')}}npm/cli{{else if (equals depName 'pkl')}}apple/pkl{{else if (equals depName 'hk')}}jdx/hk{{else if (equals depName 'usage')}}jdx/usage{{else if (equals depName 'semver')}}fsaintjacques/semver-tool{{else}}{{depName}}{{/if}}"
+    }
+  ]
+}
