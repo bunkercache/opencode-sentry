@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/bunkercache/opencode-sentry/compare/v1.0.5...v1.0.6) (2026-01-30)
+
+
+### Bug Fixes
+
+* trigger release for dependency upgrades ([#14](https://github.com/bunkercache/opencode-sentry/issues/14)) ([eadd7bf](https://github.com/bunkercache/opencode-sentry/commit/eadd7bf6e22dbf7acc536c080ce30f3fa9884609))
+
 ## [1.0.5](https://github.com/bunkercache/opencode-sentry/compare/v1.0.4...v1.0.5) (2026-01-28)
 
 
